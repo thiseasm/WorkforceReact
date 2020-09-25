@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Auxiliary from '../Auxiliary/Auxiliary';
 import Navbar from '../../components/Navigation/Navbar/Navbar';
+import WorkForce from '../../containers/WorkForce/WorkForce';
 import classes from './Layout.module.css';
 
 class Layout extends Component {
@@ -14,11 +15,12 @@ class Layout extends Component {
 	};
 
 	render() {
-		console.log(this.state.activeTab);
 		return (
 			<Auxiliary>
 				<Navbar clicked={this.changeTabHandler} />
-				<main className={classes.Main}>{this.props.children}</main>
+				<main className={classes.Main}>
+					<WorkForce tab={this.state.activeTab} />
+				</main>
 			</Auxiliary>
 		);
 	}
