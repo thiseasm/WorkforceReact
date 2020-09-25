@@ -1,0 +1,11 @@
+.SkillDetails {
+	width: '18rem';
+}
+
+.Edit {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.Delete {
+	color: maroon;
+}
