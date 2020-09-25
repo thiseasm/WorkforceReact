@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Table from 'react-bootstrap/Table';
+import NoDataError from '../../UI/ErrorMessages/NoDataError/NoDataError';
 import classes from './EmployeeTable.module.css';
 
 const employeeTable = props =>
@@ -16,6 +17,8 @@ const employeeTable = props =>
 			</thead>
 			<tbody>{props.children}</tbody>
 		</Table>
-	) : null;
+	) : (
+		<NoDataError title='Employee' />
+	);
 
 export default employeeTable;
