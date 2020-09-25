@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Auxiliary from '../Auxiliary/Auxiliary';
+import Navbar from '../../components/Navigation/Navbar/Navbar';
 import classes from './Layout.module.css';
 
 class Layout extends Component {
@@ -16,6 +17,7 @@ class Layout extends Component {
 		console.log(this.state.activeTab);
 		return (
 			<Auxiliary>
+				<Navbar clicked={this.changeTabHandler} />
 				<main className={classes.Main}>{this.props.children}</main>
 			</Auxiliary>
 		);
