@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Navbar from 'react-bootstrap/Navbar';
-import NavigationItems from '../NavigationItems/NavigationItems';
+import NavigationItems from './NavigationItems/NavigationItems';
 
 const navbar = props => (
 	<Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>

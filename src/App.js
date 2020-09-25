@@ -9,7 +9,7 @@ function App() {
 	return (
 		<div>
 			<Layout>
-				<p>WorkForce</p>
+				<WorkForce />
 			</Layout>
 		</div>
 	);

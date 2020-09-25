@@ -3,7 +3,7 @@ import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 
 const navigationItem = props => (
-	<Nav>
+	<Nav className='ml-auto'>
 		<Nav.Link onClick={() => props.clicked('Employees')}>
 			Employees
 		</Nav.Link>
