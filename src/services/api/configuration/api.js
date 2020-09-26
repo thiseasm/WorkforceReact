@@ -62,10 +62,6 @@ const getHeaders = jsonHeaders => {
 const makeRequest = (method, path, params) => {
 	const finalParams = cleanNonTruthyParameters(params || {});
 
-	if (!finalParams.shop_id && App.shopId()) {
-		finalParams.shop_id = App.shopId();
-	}
-
 	return HTTP({
 		method,
 		headers: getHeaders(),
