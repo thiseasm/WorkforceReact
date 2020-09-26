@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Table from 'react-bootstrap/Table';
-import NoDataError from '../../UI/ErrorMessages/NoDataError/NoDataError';
+import NoDataError from '../../components/UI/ErrorMessages/NoDataError/NoDataError';
 import classes from './EmployeeTable.module.css';
 
 const employeeTable = props =>

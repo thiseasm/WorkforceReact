@@ -1,11 +1,11 @@
 import React from 'react';
 
-import NoDataError from '../UI/ErrorMessages/NoDataError/NoDataError';
+import SkillsContainer from '../../containers/SkillsContainer/SkillsContainer';
 import classes from './Skills.module.css';
 
 const skills = props => (
 	<div className={classes.Skills}>
-		<NoDataError title='Skill' />
+		<SkillsContainer>{[]}</SkillsContainer>
 	</div>
 );
 

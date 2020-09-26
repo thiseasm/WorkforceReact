@@ -6,7 +6,7 @@ import classes from './WorkForce.module.css';
 
 const workForce = props => (
 	<div className={classes.WorkForce}>
-		{props.tab === 'Employees' ? <Employees /> : <Skills>{[]}</Skills>}
+		{props.tab === 'Employees' ? <Employees /> : <Skills />}
 	</div>
 );
 

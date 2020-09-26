@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EmployeeTable from './EmployeeTable/EmployeeTable';
+import EmployeeTable from '../../containers/EmployeeTable/EmployeeTable';
 
 import classes from './Employees.module.css';
 
