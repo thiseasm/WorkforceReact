@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import EmployeeTable from '../../containers/EmployeeTable/EmployeeTable';
 
 import classes from './Employees.module.css';
 
-const employees = props => (
-	<div className={classes.Employees}>
-		<EmployeeTable>{[]}</EmployeeTable>
-	</div>
-);
+class Employees extends Component {
+	render() {
+		return (
+			<div className={classes.Employees}>
+				<EmployeeTable>{[]}</EmployeeTable>
+			</div>
+		);
+	}
+}
 
-export default employees;
+export default Employees;

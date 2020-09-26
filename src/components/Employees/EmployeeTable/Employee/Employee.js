@@ -1,7 +1,7 @@
 import React from 'react';
 
 const employee = props => (
-	<tr>
+	<tr onClick={() => props.clicked(props.key)}>
 		<td>{props.key}</td>
 		<td>{props.name}</td>
 		<td>{props.surname}</td>
