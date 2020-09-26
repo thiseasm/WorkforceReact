@@ -1,0 +1,11 @@
+.ButtonToolbar {
+	margin-left: 10%;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	justify-content: space-between !important;
+}
+
+.Button {
+	width: 10%;
+}

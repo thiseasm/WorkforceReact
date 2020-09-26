@@ -4,7 +4,6 @@ import { Employees as EmApi } from '../../services/api/endpoints/Employees/Emplo
 import { Skills as SkApi } from '../../services/api/endpoints/Skills/Skills';
 import Employees from '../../components/Employees/Employees';
 import Skills from '../../components/Skills/Skills';
-import classes from './WorkForce.module.css';
 
 class WorkForce extends Component {
 	state = {
@@ -23,7 +22,7 @@ class WorkForce extends Component {
 
 	render() {
 		return (
-			<div className={classes.WorkForce}>
+			<div>
 				{this.props.tab === 'Employees' ? (
 					<Employees elements={this.state.elements} />
 				) : (
