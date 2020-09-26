@@ -9,7 +9,6 @@ const employees = props => {
 	let employeeComponents = Object.keys(props.elements)
 		.map(emKey => {
 			return [...Array(props.elements[emKey])].map(_ => {
-				console.log(props.elements[emKey]);
 				return (
 					<Employee
 						key={emKey}

@@ -1,32 +1,22 @@
 import React, { Component } from 'react';
 
-import { Employees as EmApi } from '../../services/api/endpoints/Employees/Employees';
-import { Skills as SkApi } from '../../services/api/endpoints/Skills/Skills';
-import Employees from '../../components/Employees/Employees';
-import Skills from '../../components/Skills/Skills';
+import EmployeeManager from '../../components/EmployeeManager/EmployeeManager';
+import EmployeeForm from '../../components/Forms/EmployeeForm/EmployeeForm';
+import SkillsManager from '../../components/SkillsManager/SkillsManager';
 
 class WorkForce extends Component {
-	state = {
-		elements: []
-	};
-
-	async componentDidMount() {
-		if (this.props.tab === 'Employees') {
-			const employees = await EmApi.index();
-			this.setState({ elements: employees });
-		} else {
-			const skills = await SkApi.index();
-			this.setState({ elements: skills });
-		}
-	}
-
 	render() {
+		console.log(this.props.showForm);
 		return (
 			<div>
 				{this.props.tab === 'Employees' ? (
-					<Employees elements={this.state.elements} />
+					this.props.showForm ? (
+						<EmployeeForm />
+					) : (
+						<EmployeeManager />
+					)
 				) : (
-					<Skills elements={this.state.elements} />
+					<SkillsManager />
 				)}
 			</div>
 		);

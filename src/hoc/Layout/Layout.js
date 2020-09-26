@@ -8,22 +8,38 @@ import classes from './Layout.module.css';
 
 class Layout extends Component {
 	state = {
-		activeTab: 'Employees'
+		activeTab: 'Employees',
+		showForm: false
 	};
 
 	changeTabHandler = tabName => {
 		this.setState({ activeTab: tabName });
 	};
 
+	createNewHandler = () => {
+		this.setState({ showForm: true });
+	};
+
+	exitFormHandler = () => {
+		this.setState({ showForm: false });
+	};
+
 	render() {
 		const placeholder =
 			this.state.activeTab === 'Employees' ? 'Name or Surname' : 'Title';
+
 		return (
 			<Auxiliary>
 				<Navbar clicked={this.changeTabHandler} />
 				<main className={classes.Main}>
-					<ButtonToolbar placeholder={placeholder} />
-					<WorkForce tab={this.state.activeTab} />
+					<ButtonToolbar
+						placeholder={placeholder}
+						onCreate={this.createNewHandler}
+					/>
+					<WorkForce
+						tab={this.state.activeTab}
+						showForm={this.state.showForm}
+					/>
 				</main>
 			</Auxiliary>
 		);

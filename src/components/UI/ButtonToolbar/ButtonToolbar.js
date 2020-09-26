@@ -8,7 +8,11 @@ import classes from './ButtonToolbar.module.css';
 
 const buttonToolbar = props => (
 	<ButtonToolbar className={classes.ButtonToolbar}>
-		<Button className={classes.Button} title='Create' />
+		<Button
+			className={classes.Button}
+			onClick={props.createNewHandler}
+			title='Create'
+		/>
 		<SearchField placeholder={props.placeholder} />
 	</ButtonToolbar>
 );
