@@ -39,6 +39,7 @@ class Layout extends Component {
 					<WorkForce
 						tab={this.state.activeTab}
 						showForm={this.state.showForm}
+						onClose={this.exitFormHandler}
 					/>
 				</main>
 			</Auxiliary>

@@ -10,7 +10,7 @@ const buttonToolbar = props => (
 	<ButtonToolbar className={classes.ButtonToolbar}>
 		<Button
 			className={classes.Button}
-			onClick={props.createNewHandler}
+			clicked={props.onCreate}
 			title='Create'
 		/>
 		<SearchField placeholder={props.placeholder} />

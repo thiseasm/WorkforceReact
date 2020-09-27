@@ -1,6 +1,6 @@
-import { makeRequest } from '../../configuration/api';
+import { makeRequestJSON } from '../../configuration/api';
 
 export const HistoryEntries = {
-	index: () => makeRequest('GET', 'History'),
-	entriesForEmployee: id => makeRequest('GET', `History/${id}`)
+	index: () => makeRequestJSON('GET', 'History'),
+	entriesForEmployee: id => makeRequestJSON('GET', `History/${id}`)
 };

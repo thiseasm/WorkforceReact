@@ -78,8 +78,7 @@ const makeRequestJSON = (method, path, params) =>
 		method,
 		headers: getHeaders(JSON),
 		url: path,
-		data: method !== 'GET' ? params : undefined,
-		params: method === 'GET' ? params : undefined
+		data: params
 	});
 
 export { makeRequest, makeRequestJSON };

@@ -2,20 +2,21 @@ import React from 'react';
 
 import Button from '../../UI/ButtonToolbar/Button/Button';
 import Form from 'react-bootstrap/Form';
+import classes from './EmployeeForm.module.css';
 
 const employeeForm = props => (
-	<Form>
+	<Form className={classes.EmployeeForm}>
 		<Form.Group>
 			<Form.Label>Name</Form.Label>
-			<Form.Control type='text' placeholder={props.name} />
+			<Form.Control type='text' defaultValue={props.name} />
 		</Form.Group>
 		<Form.Group>
 			<Form.Label>Surname</Form.Label>
-			<Form.Control type='text' placeholder={props.surname} />
+			<Form.Control type='text' defaultValue={props.surname} />
 		</Form.Group>
 		<Form.Group>
 			<Form.Label>Hired At</Form.Label>
-			<Form.Control type='date' value={props.hiredAt} />
+			<Form.Control type='date' defaultValue={props.hiredAt} />
 		</Form.Group>
 		<Form.Group>
 			<Form.Label>Skills</Form.Label>
@@ -28,6 +29,7 @@ const employeeForm = props => (
 			</Form.Control>
 		</Form.Group>
 		<Button title='Create' />
+		<Button title='Cancel' clicked={props.onCancel} />
 	</Form>
 );
 

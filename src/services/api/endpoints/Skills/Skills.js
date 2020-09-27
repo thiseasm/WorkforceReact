@@ -1,9 +1,9 @@
-import { makeRequest } from '../../configuration/api';
+import { makeRequestJSON } from '../../configuration/api';
 
 export const Skills = {
-	index: () => makeRequest('GET', 'Skill'),
-	single: id => makeRequest('GET', `Skill/${id}`),
-	create: skill => makeRequest('POST', 'Skill', { skill }),
-	delete: id => makeRequest('DELETE', `Skill/${id}`),
-	massDelete: ids => makeRequest('DELETE', 'Skill', { ids })
+	index: () => makeRequestJSON('GET', 'Skill'),
+	single: id => makeRequestJSON('GET', `Skill/${id}`),
+	create: skill => makeRequestJSON('POST', 'Skill', { ...skill }),
+	delete: id => makeRequestJSON('DELETE', `Skill/${id}`),
+	massDelete: ids => makeRequestJSON('DELETE', 'Skill', { ids })
 };
