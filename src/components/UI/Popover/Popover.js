@@ -4,7 +4,7 @@ import Popover from 'react-bootstrap/Popover';
 
 const popover = props => (
 	<Popover>
-		<Popover.Content>{props.childre}</Popover.Content>
+		<Popover.Content>{props.children}</Popover.Content>
 	</Popover>
 );
 

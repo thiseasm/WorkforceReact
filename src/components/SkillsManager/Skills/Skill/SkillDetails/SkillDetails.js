@@ -1,28 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 
+import { Skills as SkApi } from '../../../../../services/api/endpoints/Skills/Skills';
 import Card from 'react-bootstrap/Card';
 import classes from './SkillDetails.module.css';
 
-const skillDetails = props => (
-	<Card className={classes.SkillDetails}>
-		<Card.Body>
-			<Card.Title>{props.title}</Card.Title>
-			<Card.Subtitle className='mb-2 text-muted'>
-				Created at: {props.createdAt}
-			</Card.Subtitle>
-			<Card.Text>{props.description}</Card.Text>
-			<Card.Link
-				className={classes.Edit}
-				onClick={() => props.onEdit(props.key)}>
-				Card Link
-			</Card.Link>
-			<Card.Link
-				className={classes.Delete}
-				onClick={() => props.onDelete(props.key)}>
-				Another Link
-			</Card.Link>
-		</Card.Body>
-	</Card>
-);
+class skillDetails extends Component {
+	state = {
+		id: this.props.id,
+		createdAt: '',
+		title: '',
+		description: ''
+	};
+
+	async componentDidMount() {
+		const skill = await SkApi.single(this.props.id);
+		this.setState({
+			createdAt: skill.createdAt,
+			title: skill.title,
+			description: skill.description
+		});
+	}
+
+	render() {
+		return (
+			<Card className={classes.SkillDetails}>
+				<Card.Body>
+					<Card.Title>{this.state.title}</Card.Title>
+					<Card.Subtitle className='mb-2 text-muted'>
+						Created at: {this.state.createdAt}
+					</Card.Subtitle>
+					<Card.Text>{this.state.description}</Card.Text>
+					<Card.Link
+						className={classes.Edit}
+						onClick={() => this.props.onEdit(this.props.key)}>
+						Card Link
+					</Card.Link>
+					<Card.Link
+						className={classes.Delete}
+						onClick={() => this.props.onDelete(this.props.key)}>
+						Another Link
+					</Card.Link>
+				</Card.Body>
+			</Card>
+		);
+	}
+}
 
 export default skillDetails;
