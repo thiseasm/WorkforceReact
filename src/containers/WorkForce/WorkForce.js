@@ -14,12 +14,7 @@ const workForce = props => (
 				<EmployeeManager />
 			)
 		) : props.showForm ? (
-			<SkillForm
-				id='0'
-				title=''
-				description=''
-				onCancel={props.onCancel}
-			/>
+			<SkillForm id='0' title='' description='' onClose={props.onClose} />
 		) : (
 			<SkillsManager />
 		)}

@@ -1,11 +1,22 @@
 .SkillDetails {
-	width: '18rem';
+	width: 30%;
+	margin-left: 35%;
+	margin-top: 30%;
+	background-color: blanchedalmond;
+	z-index: 100;
 }
 
 .Edit {
-	color: rgba(255, 255, 255, 0.75);
+	color: rgba(7, 1, 1, 0.205);
+	cursor: pointer;
 }
 
 .Delete {
 	color: maroon;
+	cursor: pointer;
+}
+
+.Delete:hover,
+.Edit:hover {
+	color: black;
 }

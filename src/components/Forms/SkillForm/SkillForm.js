@@ -5,7 +5,7 @@ import Button from '../../UI/ButtonToolbar/Button/Button';
 import Form from 'react-bootstrap/Form';
 import classes from './SkillForm.module.css';
 
-class skillForm extends Component {
+class SkillForm extends Component {
 	state = {
 		id: 0,
 		title: '',
@@ -61,4 +61,4 @@ class skillForm extends Component {
 	}
 }
 
-export default skillForm;
+export default SkillForm;

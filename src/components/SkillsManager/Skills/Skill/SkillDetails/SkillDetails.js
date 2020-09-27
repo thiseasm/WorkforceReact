@@ -4,7 +4,7 @@ import { Skills as SkApi } from '../../../../../services/api/endpoints/Skills/Sk
 import Card from 'react-bootstrap/Card';
 import classes from './SkillDetails.module.css';
 
-class skillDetails extends Component {
+class SkillDetails extends Component {
 	state = {
 		id: this.props.id,
 		createdAt: '',
@@ -21,6 +21,10 @@ class skillDetails extends Component {
 		});
 	}
 
+	deleteItemHandler = () => {
+		SkApi.delete(this.props.id);
+	};
+
 	render() {
 		return (
 			<Card className={classes.SkillDetails}>
@@ -33,12 +37,12 @@ class skillDetails extends Component {
 					<Card.Link
 						className={classes.Edit}
 						onClick={() => this.props.onEdit(this.props.key)}>
-						Card Link
+						Edit
 					</Card.Link>
 					<Card.Link
 						className={classes.Delete}
-						onClick={() => this.props.onDelete(this.props.key)}>
-						Another Link
+						onClick={this.deleteItemHandler}>
+						Delete
 					</Card.Link>
 				</Card.Body>
 			</Card>
@@ -46,4 +50,4 @@ class skillDetails extends Component {
 	}
 }
 
-export default skillDetails;
+export default SkillDetails;
