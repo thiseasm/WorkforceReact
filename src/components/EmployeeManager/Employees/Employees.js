@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Employee from '../Employees/Employee/Employee';
-import EmployeeTable from '../../containers/EmployeeTable/EmployeeTable';
+import EmployeeTable from '../../../containers/EmployeeTable/EmployeeTable';
 
 import classes from './Employees.module.css';
 

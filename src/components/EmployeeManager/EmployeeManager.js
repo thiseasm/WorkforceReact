@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Employees as EmApi } from '../../services/api/endpoints/Employees/Employees';
-import Employees from '../../components/Employees/Employees';
+import Employees from './Employees/Employees';
 
 class EmployeeManager extends Component {
 	state = {
