@@ -1,3 +1,21 @@
+# WorkforceReact
+
+ A first attemp at creating a Workforce management Single Page Application with React.js. 
+
+
+### Description:
+This application is designed to work along with WorkforceManagerAPI
+
+The application provides simple CRUD actions for the two models provided, Employees and Skills. 
+The user is free to create and update those models along with their relative details. 
+Each employee can be associated with zero or many skills, as long as they have been already registered from the Skills menu.
+
+### Built with:
+* [React.js](https://reactjs.org/) - A JavaScript library for building user interfaces
+* [React-Bootstrap](https://react-bootstrap.github.io/) - General styling
+* [axios](https://github.com/axios/axios) - Promise based HTTP client
+* [Bootstrap](https://getbootstrap.com/) - General styling
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
