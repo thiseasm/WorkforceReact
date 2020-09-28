@@ -8,12 +8,7 @@ import classes from './EditEmployeeForm.module.css';
 
 class EditEmployeeForm extends Component {
 	state = {
-		id: 0,
-		name: '',
-		surname: '',
-		hiredAt: '',
-		skills: [],
-		skillIds: {}
+		id: this.props.id
 	};
 
 	async componentDidMount() {
@@ -101,7 +96,7 @@ class EditEmployeeForm extends Component {
 					<Form.Control
 						name='hiredAt'
 						type='date'
-						defaultValue={this.state.hiredAt}
+						value={this.state.hiredAt}
 						onChange={this.inputChangeHandler}
 					/>
 				</Form.Group>

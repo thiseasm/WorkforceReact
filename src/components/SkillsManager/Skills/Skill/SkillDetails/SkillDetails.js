@@ -29,7 +29,7 @@ class SkillDetails extends Component {
 				<Card.Body>
 					<Card.Title>{this.state.title}</Card.Title>
 					<Card.Subtitle className='mb-2 text-muted'>
-						Created at: {this.state.createdAt}
+						Created at: {this.state.createdAt.slice(0, 10)}
 					</Card.Subtitle>
 					<Card.Text>{this.state.description}</Card.Text>
 					<Card.Link
