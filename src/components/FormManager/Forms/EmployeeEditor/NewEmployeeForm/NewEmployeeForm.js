@@ -6,9 +6,9 @@ import { Employees as EmApi } from '../../../../../services/api/endpoints/Employ
 import { Skills as SkApi } from '../../../../../services/api/endpoints/Skills/Skills';
 import classes from './NewEmployeeForm.module.css';
 
-class EditEmployeeForm extends Component {
+class NewEmployeeForm extends Component {
 	state = {
-		id: this.props.id,
+		id: 0,
 		name: '',
 		surname: '',
 		hiredAt: '',
@@ -108,10 +108,10 @@ class EditEmployeeForm extends Component {
 					</Form.Control>
 				</Form.Group>
 				<Button title='Submit' type='Submit' />
-				<Button title='Cancel' clicked={this.props.onCancel} />
+				<Button title='Cancel' clicked={this.props.onClose} />
 			</Form>
 		);
 	}
 }
 
-export default EditEmployeeForm;
+export default NewEmployeeForm;

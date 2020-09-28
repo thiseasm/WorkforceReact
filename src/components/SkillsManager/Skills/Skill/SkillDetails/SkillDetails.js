@@ -34,7 +34,7 @@ class SkillDetails extends Component {
 					<Card.Text>{this.state.description}</Card.Text>
 					<Card.Link
 						className={classes.Edit}
-						onClick={() => this.props.onEdit(this.props.key)}>
+						onClick={() => this.props.clicked(this.props.id)}>
 						Edit
 					</Card.Link>
 					<Card.Link

@@ -4,9 +4,9 @@ import Button from '../../../../UI/ButtonToolbar/Button/Button';
 import Form from 'react-bootstrap/Form';
 import { Employees as EmApi } from '../../../../../services/api/endpoints/Employees/Employees';
 import { Skills as SkApi } from '../../../../../services/api/endpoints/Skills/Skills';
-import classes from './NewEmployeeForm.module.css';
+import classes from './EditEmployeeForm.module.css';
 
-class NewEmployeeForm extends Component {
+class EditEmployeeForm extends Component {
 	state = {
 		id: 0,
 		name: '',
@@ -17,7 +17,9 @@ class NewEmployeeForm extends Component {
 	};
 
 	async componentDidMount() {
+		const employee = await EmApi.single(this.props.id);
 		const skills = await SkApi.index();
+
 		let skillOptions = Object.keys(skills)
 			.map(emKey => {
 				return [...Array(skills[emKey])].map(_ => {
@@ -33,6 +35,9 @@ class NewEmployeeForm extends Component {
 			}, []);
 
 		this.setState({
+			hiredAt: employee.hiredAt,
+			name: employee.name,
+			surname: employee.surname,
 			skills: skillOptions
 		});
 	}
@@ -71,13 +76,14 @@ class NewEmployeeForm extends Component {
 	render() {
 		return (
 			<Form
-				className={classes.NewEmployeeForm}
+				className={classes.EditEmployeeForm}
 				onSubmit={this.formSubmitHandler}>
 				<Form.Group>
 					<Form.Label>Name</Form.Label>
 					<Form.Control
 						name='name'
 						type='text'
+						defaultValue={this.state.name}
 						onChange={this.inputChangeHandler}
 					/>
 				</Form.Group>
@@ -86,6 +92,7 @@ class NewEmployeeForm extends Component {
 					<Form.Control
 						name='surname'
 						type='text'
+						defaultValue={this.state.surname}
 						onChange={this.inputChangeHandler}
 					/>
 				</Form.Group>
@@ -94,6 +101,7 @@ class NewEmployeeForm extends Component {
 					<Form.Control
 						name='hiredAt'
 						type='date'
+						defaultValue={this.state.hiredAt}
 						onChange={this.inputChangeHandler}
 					/>
 				</Form.Group>
@@ -108,10 +116,10 @@ class NewEmployeeForm extends Component {
 					</Form.Control>
 				</Form.Group>
 				<Button title='Submit' type='Submit' />
-				<Button title='Cancel' clicked={this.props.onCancel} />
+				<Button title='Cancel' clicked={this.props.onClose} />
 			</Form>
 		);
 	}
 }
 
-export default NewEmployeeForm;
+export default EditEmployeeForm;

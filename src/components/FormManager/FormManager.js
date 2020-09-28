@@ -1,30 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
-import NewEmployeeForm from './Forms/EmployeeForm/NewEmployeeForm/NewEmployeeForm';
 import NewSkillForm from './Forms/SkillForm/NewSkillForm/NewSkillForm';
 import EmployeeDetails from '../EmployeeManager/Employees/Employee/EmployeeDetails/EmployeeDetails';
 import SkillDetails from '../SkillsManager/Skills/Skill/SkillDetails/SkillDetails';
+import EmployeeEditor from './Forms/EmployeeEditor/EmployeeEditor';
 
-const formManager = props => {
-	return (
-		<Auxiliary>
-			{props.tab === 'Employees' ? (
-				props.detailsId === 0 ? (
-					<NewEmployeeForm onClose={props.onClose} />
+class FormManager extends Component {
+	state = {
+		id: this.props.detailsId,
+		showEdit: this.props.showEdit
+	};
+
+	editButtonClickedHandler = () => {
+		this.setState({ showEdit: true });
+	};
+
+	render() {
+		return (
+			<Auxiliary>
+				{this.props.tab === 'Employees' ? (
+					!this.state.showEdit ? (
+						<EmployeeDetails
+							onEdit={this.editButtonClickedHandler}
+							id={this.state.id}
+							onClose={this.props.onClose}
+						/>
+					) : (
+						<EmployeeEditor
+							id={this.state.id}
+							onClose={this.props.onClose}
+						/>
+					)
+				) : this.state.id === 0 ? (
+					<NewSkillForm onClose={this.props.onClose} />
 				) : (
-					<EmployeeDetails
-						id={props.detailsId}
-						onClose={props.onClose}
+					<SkillDetails
+						clicked={this.editButtonClickedHandler}
+						id={this.state.id}
+						onClose={this.props.onClose}
 					/>
-				)
-			) : props.detailsId === 0 ? (
-				<NewSkillForm onClose={props.onClose} />
-			) : (
-				<SkillDetails id={props.detailsId} onClose={props.onClose} />
-			)}
-		</Auxiliary>
-	);
-};
+				)}
+			</Auxiliary>
+		);
+	}
+}
 
-export default formManager;
+export default FormManager;
