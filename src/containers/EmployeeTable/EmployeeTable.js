@@ -9,7 +9,6 @@ const employeeTable = props =>
 		<Table striped bordered hover className={classes.EmployeeTable}>
 			<thead>
 				<tr>
-					<th>#</th>
 					<th>Name</th>
 					<th>Surname</th>
 					<th>Hired At</th>

@@ -6,10 +6,7 @@ import classes from './SkillDetails.module.css';
 
 class SkillDetails extends Component {
 	state = {
-		id: this.props.id,
-		createdAt: '',
-		title: '',
-		description: ''
+		id: this.props.id
 	};
 
 	async componentDidMount() {
@@ -23,7 +20,7 @@ class SkillDetails extends Component {
 
 	deleteItemHandler = () => {
 		SkApi.delete(this.props.id);
-		this.props.onClosed();
+		this.props.onClose();
 	};
 
 	render() {
@@ -46,8 +43,8 @@ class SkillDetails extends Component {
 						Delete
 					</Card.Link>
 					<Card.Link
-						className={classes.Delete}
-						onClick={this.props.onClosed}>
+						className={classes.Cancel}
+						onClick={() => this.props.onClose()}>
 						Cancel
 					</Card.Link>
 				</Card.Body>
