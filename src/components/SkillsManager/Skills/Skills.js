@@ -14,6 +14,7 @@ const skills = props => {
 						id={props.elements[emKey].id}
 						title={props.elements[emKey].title}
 						description={props.elements[emKey].description}
+						clicked={props.clicked}
 					/>
 				);
 			});

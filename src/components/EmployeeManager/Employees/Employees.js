@@ -16,6 +16,7 @@ const employees = props => {
 						surname={props.elements[emKey].surname}
 						hiredAt={props.elements[emKey].hiredAt}
 						id={props.elements[emKey].id}
+						clicked={props.clicked}
 					/>
 				);
 			});

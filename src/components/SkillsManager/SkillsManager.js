@@ -8,13 +8,19 @@ class SkillsManager extends Component {
 		elements: []
 	};
 
+	showDetails = id => {
+		this.props.clicked(id);
+	};
+
 	async componentDidMount() {
 		const skills = await SkApi.index();
 		this.setState({ elements: skills });
 	}
 
 	render() {
-		return <Skills elements={this.state.elements} />;
+		return (
+			<Skills elements={this.state.elements} clicked={this.showDetails} />
+		);
 	}
 }
 

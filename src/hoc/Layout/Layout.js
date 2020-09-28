@@ -10,19 +10,27 @@ import classes from './Layout.module.css';
 class Layout extends Component {
 	state = {
 		activeTab: 'Employees',
-		showForm: false
+		showForm: false,
+		detailsId: 0
+	};
+
+	showDetailsHandler = id => {
+		this.setState({
+			showForm: true,
+			detailsId: id
+		});
 	};
 
 	changeTabHandler = tabName => {
-		this.setState({ activeTab: tabName });
+		this.setState({ activeTab: tabName, showForm: false, detailsId: 0 });
 	};
 
 	createNewHandler = () => {
-		this.setState({ showForm: true });
+		this.setState({ showForm: true, detailsId: 0 });
 	};
 
 	exitFormHandler = () => {
-		this.setState({ showForm: false });
+		this.setState({ showForm: false, detailsId: 0 });
 	};
 
 	render() {
@@ -40,10 +48,14 @@ class Layout extends Component {
 					{this.state.showForm ? (
 						<FormManager
 							tab={this.state.activeTab}
+							detailsId={this.state.detailsId}
 							onClose={this.exitFormHandler}
 						/>
 					) : (
-						<WorkForce tab={this.state.activeTab} />
+						<WorkForce
+							tab={this.state.activeTab}
+							showDetails={this.showDetailsHandler}
+						/>
 					)}
 				</main>
 			</Auxiliary>

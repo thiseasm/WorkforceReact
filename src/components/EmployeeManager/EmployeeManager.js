@@ -8,13 +8,22 @@ class EmployeeManager extends Component {
 		elements: []
 	};
 
+	showDetails = id => {
+		this.props.clicked(id);
+	};
+
 	async componentDidMount() {
 		const employees = await EmApi.index();
 		this.setState({ elements: employees });
 	}
 
 	render() {
-		return <Employees elements={this.state.elements} />;
+		return (
+			<Employees
+				elements={this.state.elements}
+				clicked={this.showDetails}
+			/>
+		);
 	}
 }
 
