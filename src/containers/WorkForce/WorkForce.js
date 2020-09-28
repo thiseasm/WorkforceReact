@@ -1,24 +1,13 @@
 import React from 'react';
 
+import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
 import EmployeeManager from '../../components/EmployeeManager/EmployeeManager';
-import EmployeeForm from '../../components/Forms/EmployeeForm/EmployeeForm';
 import SkillsManager from '../../components/SkillsManager/SkillsManager';
-import SkillForm from '../../components/Forms/SkillForm/SkillForm';
 
 const workForce = props => (
-	<div>
-		{props.tab === 'Employees' ? (
-			props.showForm ? (
-				<EmployeeForm onCancel={props.onCancel} />
-			) : (
-				<EmployeeManager />
-			)
-		) : props.showForm ? (
-			<SkillForm id='0' title='' description='' onClose={props.onClose} />
-		) : (
-			<SkillsManager />
-		)}
-	</div>
+	<Auxiliary>
+		{props.tab === 'Employees' ? <EmployeeManager /> : <SkillsManager />}
+	</Auxiliary>
 );
 
 export default workForce;

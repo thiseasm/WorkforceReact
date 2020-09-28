@@ -4,6 +4,7 @@ import Auxiliary from '../Auxiliary/Auxiliary';
 import Navbar from '../../components/Navigation/Navbar/Navbar';
 import ButtonToolbar from '../../components/UI/ButtonToolbar/ButtonToolbar';
 import WorkForce from '../../containers/WorkForce/WorkForce';
+import FormManager from '../../components/FormManager/FormManager';
 import classes from './Layout.module.css';
 
 class Layout extends Component {
@@ -36,11 +37,14 @@ class Layout extends Component {
 						placeholder={placeholder}
 						onCreate={this.createNewHandler}
 					/>
-					<WorkForce
-						tab={this.state.activeTab}
-						showForm={this.state.showForm}
-						onClose={this.exitFormHandler}
-					/>
+					{this.state.showForm ? (
+						<FormManager
+							tab={this.state.activeTab}
+							onClose={this.exitFormHandler}
+						/>
+					) : (
+						<WorkForce tab={this.state.activeTab} />
+					)}
 				</main>
 			</Auxiliary>
 		);

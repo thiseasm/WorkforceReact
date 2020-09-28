@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import { Skills } from '../../../services/api/endpoints/Skills/Skills';
-import Button from '../../UI/ButtonToolbar/Button/Button';
+import { Skills } from '../../../../../services/api/endpoints/Skills/Skills';
+import Button from '../../../../UI/ButtonToolbar/Button/Button';
 import Form from 'react-bootstrap/Form';
-import classes from './SkillForm.module.css';
+import classes from './NewSkillForm.module.css';
 
-class SkillForm extends Component {
+class NewSkillForm extends Component {
 	state = {
 		id: 0,
 		title: '',
@@ -32,7 +32,7 @@ class SkillForm extends Component {
 	render() {
 		return (
 			<Form
-				className={classes.SkillForm}
+				className={classes.NewSkillForm}
 				onSubmit={event => {
 					this.formSubmitHandler(event);
 				}}>
@@ -41,7 +41,6 @@ class SkillForm extends Component {
 					<Form.Control
 						name='title'
 						type='text'
-						defaultValue={this.props.title}
 						onChange={this.inputChangeHandler}
 					/>
 				</Form.Group>
@@ -50,7 +49,6 @@ class SkillForm extends Component {
 					<Form.Control
 						name='description'
 						as='textarea'
-						defaultValue={this.props.description}
 						onChange={this.inputChangeHandler}
 					/>
 				</Form.Group>
@@ -61,4 +59,4 @@ class SkillForm extends Component {
 	}
 }
 
-export default SkillForm;
+export default NewSkillForm;

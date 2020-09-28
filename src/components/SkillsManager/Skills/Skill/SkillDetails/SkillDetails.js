@@ -23,6 +23,7 @@ class SkillDetails extends Component {
 
 	deleteItemHandler = () => {
 		SkApi.delete(this.props.id);
+		this.props.onClosed();
 	};
 
 	render() {
@@ -43,6 +44,11 @@ class SkillDetails extends Component {
 						className={classes.Delete}
 						onClick={this.deleteItemHandler}>
 						Delete
+					</Card.Link>
+					<Card.Link
+						className={classes.Delete}
+						onClick={this.props.onClosed}>
+						Cancel
 					</Card.Link>
 				</Card.Body>
 			</Card>
