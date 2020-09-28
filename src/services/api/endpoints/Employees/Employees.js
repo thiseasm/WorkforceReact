@@ -6,6 +6,5 @@ export const Employees = {
 	create: employee => makeRequestJSON('POST', 'Employee', { ...employee }),
 	update: employee => makeRequestJSON('POST', 'Employee', { ...employee }),
 	delete: id => makeRequestJSON('DELETE', `Employee/${id}`),
-	massDelete: ids =>
-		makeRequestJSON('DELETE', 'Employee', { employeeIds: ids })
+	massDelete: ids => makeRequestJSON('DELETE', 'Employee', { ids })
 };

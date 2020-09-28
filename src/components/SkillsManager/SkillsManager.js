@@ -5,6 +5,7 @@ import Skills from '../../components/SkillsManager/Skills/Skills';
 
 class SkillsManager extends Component {
 	state = {
+		isLoaded: false,
 		elements: []
 	};
 
@@ -14,7 +15,7 @@ class SkillsManager extends Component {
 
 	async componentDidMount() {
 		const skills = await SkApi.index();
-		this.setState({ elements: skills });
+		this.setState({ isLoaded: true, elements: skills });
 	}
 
 	render() {

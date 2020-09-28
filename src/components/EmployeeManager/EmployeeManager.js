@@ -5,6 +5,7 @@ import Employees from './Employees/Employees';
 
 class EmployeeManager extends Component {
 	state = {
+		isLoaded: false,
 		elements: []
 	};
 
@@ -14,7 +15,7 @@ class EmployeeManager extends Component {
 
 	async componentDidMount() {
 		const employees = await EmApi.index();
-		this.setState({ elements: employees });
+		this.setState({ isLoaded: true, elements: employees });
 	}
 
 	render() {
