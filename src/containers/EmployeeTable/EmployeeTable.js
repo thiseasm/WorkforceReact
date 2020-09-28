@@ -9,8 +9,8 @@ const employeeTable = props =>
 		<Table striped bordered hover className={classes.EmployeeTable}>
 			<thead>
 				<tr>
-					<th>Name</th>
 					<th>Surname</th>
+					<th>Name</th>
 					<th>Hired At</th>
 				</tr>
 			</thead>
