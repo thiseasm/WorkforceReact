@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
-import NewSkillForm from './Forms/SkillForm/NewSkillForm/NewSkillForm';
 import EmployeeDetails from '../EmployeeManager/Employees/Employee/EmployeeDetails/EmployeeDetails';
 import SkillDetails from '../SkillsManager/Skills/Skill/SkillDetails/SkillDetails';
 import EmployeeEditor from './Forms/EmployeeEditor/EmployeeEditor';
+import SkillEditor from './Forms/SkillEditor/SkillEditor';
 
 class FormManager extends Component {
 	state = {
@@ -32,11 +32,14 @@ class FormManager extends Component {
 							onClose={this.props.onClose}
 						/>
 					)
-				) : this.state.id === 0 ? (
-					<NewSkillForm onClose={this.props.onClose} />
-				) : (
+				) : !this.state.showEdit ? (
 					<SkillDetails
 						clicked={this.editButtonClickedHandler}
+						id={this.state.id}
+						onClose={this.props.onClose}
+					/>
+				) : (
+					<SkillEditor
 						id={this.state.id}
 						onClose={this.props.onClose}
 					/>

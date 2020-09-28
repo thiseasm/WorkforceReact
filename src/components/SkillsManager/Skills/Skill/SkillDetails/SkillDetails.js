@@ -11,6 +11,7 @@ class SkillDetails extends Component {
 
 	async componentDidMount() {
 		const skill = await SkApi.single(this.props.id);
+
 		this.setState({
 			createdAt: skill.createdAt,
 			title: skill.title,
@@ -29,7 +30,7 @@ class SkillDetails extends Component {
 				<Card.Body>
 					<Card.Title>{this.state.title}</Card.Title>
 					<Card.Subtitle className='mb-2 text-muted'>
-						Created at: {this.state.createdAt.slice(0, 10)}
+						Created at: {this.state.createdAt}
 					</Card.Subtitle>
 					<Card.Text>{this.state.description}</Card.Text>
 					<Card.Link
