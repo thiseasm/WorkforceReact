@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import Auxiliary from '../Auxiliary/Auxiliary';
+import FormsContainer from '../../containers/FormsContainer/FormsContainer';
 import Navbar from '../../components/Navigation/Navbar/Navbar';
 import ButtonToolbar from '../../components/UI/ButtonToolbar/ButtonToolbar';
 import WorkForce from '../../containers/WorkForce/WorkForce';
-import FormManager from '../../components/FormManager/FormManager';
 import classes from './Layout.module.css';
 
 class Layout extends Component {
@@ -46,7 +46,7 @@ class Layout extends Component {
 						onCreate={this.createNewHandler}
 					/>
 					{this.state.showForm ? (
-						<FormManager
+						<FormsContainer
 							tab={this.state.activeTab}
 							detailsId={this.state.detailsId}
 							onClose={this.exitFormHandler}
